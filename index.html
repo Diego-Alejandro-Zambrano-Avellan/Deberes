@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Tareas</h1>
+        <form id="task-form">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Descripción:</label>
+            <input type="text" id="description" name="description" required>
+            
+            <label for="dueDate">Fecha de Vencimiento:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+            
+            <label for="priority">Prioridad:</label>
+            <select id="priority" name="priority" required>
+                <option value="Alta">Alta</option>
+                <option value="Media">Media</option>
+                <option value="Baja">Baja</option>
+            </select>
+            
+            <button type="button" onclick="addTask()">Agregar</button>
+        </form>
+        
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
