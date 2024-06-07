@@ -28,6 +28,12 @@
             
             <button type="button" onclick="addTask()">Agregar</button>
         </form>
+
+        <div class="search-container">
+            <label for="search">Buscar por título:</label>
+            <input type="text" id="search" onkeyup="searchTask()">
+        </div>
+
         <table id="task-table">
             <thead>
                 <tr>
