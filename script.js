@@ -16,17 +16,17 @@ function addTask() {
     const cell4 = newRow.insertCell(3);
     const cell5 = newRow.insertCell(4);
     const cell6 = newRow.insertCell(5);
+    const cell7 = newRow.insertCell(6);
  
-    cell6.innerHTML = `<button onclick="toggleStatus(this)">Marcar como Completado</button>`;
-
-  
+    
    
     cell1.innerHTML = title;
     cell2.innerHTML = description;
     cell3.innerHTML = dueDate;
     cell4.innerHTML = priority;
     cell5.innerHTML = status;
-
+    cell6.innerHTML = `<button onclick="toggleStatus(this)">Marcar como Completado</button>`;
+    cell7.innerHTML = `<button onclick="confirmDeletion(this)">Eliminar</button>`;
    
     document.getElementById('task-form').reset();
 
@@ -42,4 +42,13 @@ function toggleStatus(button) {
         statusCell.innerHTML = 'No entregado';
         button.innerHTML = 'Marcar como Completado';
     }
+}
+function confirmDeletion(button) {
+    if (confirm('¿Estás seguro de que deseas eliminar esta tarea?')) {
+        deleteTask(button);
+    }
+}
+function deleteTask(button) {
+    const row = button.parentElement.parentElement;
+    row.parentElement.removeChild(row);
 }
